@@ -10,4 +10,4 @@ Create the function so it will return a bool value true if the entered word is a
 
 1. Amore, Roma
 2. A man, a plan, a canal: Panama
-3. No 'x' in 'Nixon
+3. No 'x' in 'Nixon'
