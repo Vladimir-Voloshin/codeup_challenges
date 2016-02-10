@@ -10,6 +10,8 @@ class States{
     private $fileContentsArray;
     private $statesArray = [];
     private $searchBirdString;
+    const SEARCH_FOR_BIRDS    = 1;
+    const SEARCH_FOR_CAPITALS = 0;
 
     function __construct(){
         $this->fileContentsArray = file('states.txt');
@@ -23,21 +25,22 @@ class States{
         $this->printResultArray(array_keys($this->statesArray));
     }
 
-    function searchBirds($firstLetter){
+    function searchEntities($firstLetter, $useColumn){
         $this->searchBirdString = $firstLetter;
         $statesValues = array_values($this->statesArray);
-        $birdsArray = array_column($statesValues, 1);
+        $birdsArray = array_column($statesValues, $useColumn);
         $filteredArray = array_filter($birdsArray, function($bird){
             return strcasecmp($this->searchBirdString, substr($bird, 0, 1)) === 0;
         });
         $this->printResultArray(array_unique($filteredArray));
     }
 
-    function printResultArray($resultArray){
-        print(implode(",<br/>", $resultArray));
+    private function printResultArray($resultArray){
+        print(implode(",<br/>", $resultArray) . "<br/>");
     }
 }
 
 $states = new States();
-//$states->listStates();
-$states->searchBirds('b');
+$states->listStates();
+$states->searchEntities('a', States::SEARCH_FOR_CAPITALS);
+$states->searchEntities('b', States::SEARCH_FOR_BIRDS);

@@ -12,7 +12,7 @@ function alphabet_soup($str){
         $splittedWord = str_split($word);
         sort($splittedWord);
         $sortedWord = implode('', $splittedWord);
-        $resultWord .= $sortedWord;
+        $resultWord .= $sortedWord . ' ';
     }
     echo $resultWord;
 }

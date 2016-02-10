@@ -1,0 +1,8 @@
+.solutionLink{
+	pointer-events: none;
+    cursor: default;
+    color:red;
+}
+.solutionLink1{
+    color:forestgreen;
+}
