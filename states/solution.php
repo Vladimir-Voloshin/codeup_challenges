@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: doomer
@@ -14,7 +15,7 @@ class States{
     const SEARCH_FOR_CAPITALS = 0;
 
     function __construct(){
-        $this->fileContentsArray = file('states.txt');
+        $this->fileContentsArray = file($_SERVER['DOCUMENT_ROOT'] . '/states/states.txt');
         foreach($this->fileContentsArray as $stateRow){
             $tempArr = explode(", ", rtrim($stateRow));
             $this->statesArray[array_shift($tempArr)] = $tempArr;

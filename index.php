@@ -5,7 +5,7 @@ echo('<link rel="stylesheet" type="text/css" href="/main.css">');
 
 class Index{
     public function printSolutionLink($folder, $solved){
-        print("<a class='solutionLink$solved' href='./$folder/solution.php'>$folder</a>" . "<br/>");
+        print("<a class='solutionLink$solved' href='./printSolution.php?folder=$folder'>$folder</a>" . "<br/>");
     }
 }
 
